@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AsimovAssignment": {
+      "commandName": "Project",
+      "commandLineArgs": "\"-l\" \"Aparajit_Pratap\""
+    }
+  }
+}
