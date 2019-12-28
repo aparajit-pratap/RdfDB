@@ -22,16 +22,19 @@ Open the “.sln” file in Visual Studio (might also work in VS Code). The “D
 The console application can be invoked using different command line argument options. See “Main” entry point method on the “Program” class:
 
 “-p” to index the database, parse local RDF triple file, and store all records in the DB. This command line option must be followed by the file path pointing to the triple file:
-
+```
 RdfDB.exe “-p” “C:\Users\pratapa.ADS\source\repos\RdfDB\persondata_en.tql”
+```
 
 “-l” to query from the DB all metadata for a person given his/her name. This option must be followed by the person name to be searched for in the database. Note the person names are entered as they exist in the URI path in the triples file. For example, the name searched for in the URI entry: http://dbpedia.org/resource/Karel_Matěj_Čapek-Chod must be specified as “Karel_Matěj_Čapek-Chod”:
-
+```
 RdfDB.exe “-l” “Karel_Matěj_Čapek-Chod”
+```
 
 “-i” to insert a new triple into the database. This creates a new record (MongoDB document) if the person doesn’t already exist and appends subject-predicate-object triple to an existing Person record if the name for that person already exists in the DB. This command line option must be following by the triple string as it is specified in the DBPedia dataset file. For example, this command will look like: 
-
+```
 RdfDB.exe “-i” “<http://dbpedia.org/resource/Karel_Matěj_Čapek-Chod> <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Domažlice> <http://www.wikidata.org/wiki/Q1000005?oldid=357660876> .”
+```
 
 The schema for the “Person” record is represented by the “PersonModel” class. This contains the “Name” property for the person and a dictionary of one or more predicate vs. object strings for that person object. See “PersonModel.cs.”
 
