@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "AsimovAssignment": {
+    "RdfDB": {
       "commandName": "Project",
       "commandLineArgs": "\"-l\" \"Aparajit_Pratap\""
     }
