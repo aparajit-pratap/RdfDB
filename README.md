@@ -7,7 +7,7 @@ The service to store the RDF format dataset (e.g. DBPedia Person data) has been 
 2. Interface to index new RDF triples - this is done by the "UpsertDocument" method on the "Database" class.
 3. Interface to retrieve all metadata about a Person - this can be queried using the "LoadDocumentForPerson" method on the "Database" class.
 
-Building the service:
+## Building the service:
 
 The solution is a .NET Core Console App. In order to setup and build the project, you will need to install the following dependencies:
 1.	Download MongoDB Community Server (4.2.2)
@@ -17,7 +17,7 @@ When installing the MongoDB Community Server, make sure to also install the Mong
 
 Open the “.sln” file in Visual Studio (might also work in VS Code). The “Database” class is a wrapper on top of the MongoDB .NET Driver database type. 
 
-Running the service:
+## Running the service:
 
 The console application can be invoked using different command line argument options. See “Main” entry point method on the “Program” class:
 
@@ -36,7 +36,7 @@ RdfDB.exe “-i” “<http://dbpedia.org/resource/Karel_Matěj_Čapek-Chod> <ht
 The schema for the “Person” record is represented by the “PersonModel” class. This contains the “Name” property for the person and a dictionary of one or more predicate vs. object strings for that person object. See “PersonModel.cs.”
 
 
-Performance and Assumptions:
+## Performance and Assumptions:
 
 This solution takes a few minutes to run to populate all the 1.4+ million person records from the DBPedia RDF file. The 1.4+M records were verified using the MongoDB Compass client app:
  
